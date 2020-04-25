@@ -45,7 +45,7 @@ namespace TravelMonkey.Views
                 return;
             }
             await Shell.Current.GoToAsync($"//translation?inputText={TranslateTextEntry.Text}");
-            //await Navigation.PushModalAsync(new TranslationResultPage(TranslateTextEntry.Text));
+            //await Shell.Current.Navigation.PushModalAsync(new TranslationResultPage(TranslateTextEntry.Text));
             TranslateTextEntry.Text = "";
         }
     }
