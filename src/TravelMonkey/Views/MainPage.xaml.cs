@@ -44,7 +44,7 @@ namespace TravelMonkey.Views
                 await DisplayAlert("No text entered", "You didn't enter any text!", "OK");
                 return;
             }
-            await Shell.Current.GoToAsync("//translation");
+            await Shell.Current.GoToAsync($"//translation?inputText={TranslateTextEntry.Text}");
             //await Navigation.PushModalAsync(new TranslationResultPage(TranslateTextEntry.Text));
             TranslateTextEntry.Text = "";
         }

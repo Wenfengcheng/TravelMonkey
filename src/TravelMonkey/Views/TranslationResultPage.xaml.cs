@@ -4,12 +4,22 @@ using Xamarin.Forms;
 
 namespace TravelMonkey.Views
 {
+    [QueryProperty("InputText", "inputText")]
     public partial class TranslationResultPage : ContentPage
     {
         private readonly TranslateResultPageViewModel _translateResultPageViewModel =
             new TranslateResultPageViewModel();
 
-        public TranslationResultPage(string inputText)
+        public string InputText
+        {
+            set
+            {
+                _translateResultPageViewModel.InputText = value;
+                BindingContext = _translateResultPageViewModel;
+            }
+        }
+
+        public TranslationResultPage()
         {
             InitializeComponent();
 
@@ -19,10 +29,6 @@ namespace TravelMonkey.Views
                 {
                     await DisplayAlert("Whoops!", "We lost our dictionary, something went wrong while translating", "OK");
                 });
-
-            _translateResultPageViewModel.InputText = inputText;
-
-            BindingContext = _translateResultPageViewModel;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
