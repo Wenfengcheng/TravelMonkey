@@ -61,7 +61,8 @@ namespace TravelMonkey.Views
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                Application.Current.MainPage = new MainPage();
+                Application.Current.MainPage = new AppShell();
+                Shell.Current.GoToAsync("//main");
             });
         }
     }

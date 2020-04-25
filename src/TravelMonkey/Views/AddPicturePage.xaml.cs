@@ -17,9 +17,10 @@ namespace TravelMonkey.Views
             MessagingCenter.Subscribe<AddPicturePageViewModel>(this, Constants.PictureFailedMessage, async (vm) => await DisplayAlert("Uh-oh!", "Can you hand me my glasses? Something went wrong while analyzing this image", "OK"));
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopModalAsync();
+            //Navigation.PopModalAsync();
+            await Shell.Current.GoToAsync("//main");
         }
     }
 }

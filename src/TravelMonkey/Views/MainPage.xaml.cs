@@ -33,7 +33,8 @@ namespace TravelMonkey.Views
 
         private async void AddNewPicture_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new AddPicturePage());
+            //await Navigation.PushModalAsync(new AddPicturePage());
+            await Shell.Current.GoToAsync("//picture");
         }
 
         private async void Entry_Completed(object sender, EventArgs e)
@@ -43,8 +44,8 @@ namespace TravelMonkey.Views
                 await DisplayAlert("No text entered", "You didn't enter any text!", "OK");
                 return;
             }
-
-            await Navigation.PushModalAsync(new TranslationResultPage(TranslateTextEntry.Text));
+            await Shell.Current.GoToAsync("//translation");
+            //await Navigation.PushModalAsync(new TranslationResultPage(TranslateTextEntry.Text));
             TranslateTextEntry.Text = "";
         }
     }

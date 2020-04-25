@@ -27,7 +27,8 @@ namespace TravelMonkey.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            //await Navigation.PopModalAsync();
+            await Shell.Current.GoToAsync("//main");
         }
     }
 }
